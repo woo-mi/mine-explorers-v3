@@ -14,11 +14,9 @@
   --color-grey-600: rgb(134 135 162);
   --color-grey-800: rgb(70 71 89);
   --color-royal-blue: rgb(6 136 255);
-  --color-sea-blue: rgb(2 106 162);
   --color-success: rgb(115 162 13);
   --color-text-primary: rgb(51 52 68);
   --color-text-secondary: hsl(218 22% 10% / 70%);
-  --color-ui-green-dark: #3BA969;
   --color-ui-orange-dark: #EC861E;
   --radius-lg: 12px;
   --spacing-1: 4px;
@@ -26,21 +24,13 @@
   --spacing-3: 12px;
   --spacing-4: 16px;
   --spacing-5: 24px;
-  --text-base: 16px;
   --text-h2: 19px;
   --text-xs: 12px;
 }
   * { margin: 0; padding: 0; }
   html, body { background: #FFFFFF; height: 100%; overflow: hidden; }
-  #stage {
-    position: fixed;
-    left: 50%; top: 50%;
-    width: 1440px; height: 1000px;
-    transform: translate(-50%, -50%) scale(1);
-    background: #FFFFFF;
-  }
   a.rail-logo {
-    position: absolute;
+    position: fixed;
     left: 0; top: 0;
     width: 48px; height: 56px;
     z-index: 10;
@@ -49,36 +39,9 @@
 </style>
 </head>
 <body>
-<div id="stage">
 <a class="rail-logo" href="https://woo-mi.github.io/prototype-agenda/" aria-label="Back to agenda"></a>
-<div style="width: 1440px; height: 1000px; background-color: #FFFFFF; box-sizing: border-box; font-family: Inter; font-size: 12px; font-synthesis: none; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; overflow-wrap: anywhere; position: relative; -webkit-font-smoothing: antialiased">
-      <div style="align-items: center; box-sizing: border-box; display: flex; left: 166px; overflow: clip; position: absolute; top: 64px">
-        <div style="align-items: center; background-color: #ECECED; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
-          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-shadow: #00000017 0px 0px 0px 0.5px; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
-          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
-            <div style="box-sizing: border-box; color: #1B1B1B; display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
-              Mine
-            </div>
-          </div>
-        </div>
-        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
-          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
-          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
-            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
-              Team
-            </div>
-          </div>
-        </div>
-        <a style="text-decoration: none; color: inherit"><div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
-          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
-          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
-            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
-              Gallery
-            </div>
-          </div>
-        </div></a>
-      </div>
-      <div style="backdrop-filter: blur(14px); background-color: #F5F5F5D1; border-right-color: color(display-p3 0.902 0.902 0.902); border-right-style: solid; border-right-width: 1px; box-sizing: border-box; height: 1000px; left: 0; overflow: clip; position: absolute; top: 0; width: 48px">
+<div style="height: 100vh; overflow: hidden; background-color: #FFFFFF; box-sizing: border-box; font-family: Inter; font-size: 12px; font-synthesis: none; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased">
+<div style="backdrop-filter: blur(14px); background-color: #F5F5F5D1; border-right-color: color(display-p3 0.902 0.902 0.902); border-right-style: solid; border-right-width: 1px; box-sizing: border-box; height: 100vh; left: 0; overflow: clip; position: fixed; top: 0; width: 48px; z-index: 5">
         <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; gap: 11px; left: 0; position: absolute; top: 8px">
           <div style="align-items: center; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 40px; justify-content: center; width: 40px">
             <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fontSize="14px" textRendering="optimizelegibility" style="height: 40px; width: 40px; overflow: clip; flex-shrink: 0">
@@ -174,7 +137,7 @@
             </div>
           </div>
         </div>
-        <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; padding-block: 4px; position: absolute; top: 908px; width: 40px">
+        <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; padding-block: 4px; position: absolute; bottom: 56px; width: 40px">
           <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; position: relative; width: 20px">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
               <path d="M10.268 21a2 2 0 0 0 3.464 0" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -187,7 +150,7 @@
             </div>
           </div>
         </div>
-        <div style="align-items: center; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; position: absolute; top: 948px; width: 40px">
+        <div style="align-items: center; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; position: absolute; bottom: 16px; width: 40px">
           <div style="align-items: center; background-color: #FBE6F5; border-color: #E7B8DE; border-radius: 50%; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 24px; justify-content: center; width: 24px">
             <div style="box-sizing: border-box; color: #9E168E; display: flex; font-family: system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px">
               M
@@ -195,13 +158,219 @@
           </div>
         </div>
       </div>
-      <div style="align-items: center; border-radius: 6px; box-sizing: border-box; display: flex; height: 24px; justify-content: center; left: 64px; position: absolute; top: 16px; width: 24px">
+<div style="align-items: center; border-radius: 6px; box-sizing: border-box; display: flex; height: 24px; justify-content: center; left: 64px; position: fixed; top: 16px; width: 24px; z-index: 5">
         <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
           <rect x="1" y="1.5" width="14" height="13" rx="2.5" fill="none" stroke="#666666"></rect>
           <path d="M5.6 1.5 L5.6 14.5" fill="#000000" stroke="#666666"></path>
         </svg>
       </div>
-      <div id="agents-table" style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; height: 668px; left: calc(50% + 24.476px); overflow: clip; position: absolute; top: 276.976px; translate: -50%; width: 1157px">
+<main style="margin-left: 48px; height: 100vh; box-sizing: border-box">
+  <div style="max-width: 1205px; margin: 0 auto; padding: 16px 24px 24px clamp(24px, calc(674.5px - 50vw), 48px); box-sizing: border-box; height: 100%; display: flex; flex-direction: column">
+    <div style="box-sizing: border-box; color: var(--color-text-primary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-h2); font-weight: 500; line-height: 24px; position: relative; width: fit-content">
+        Agents
+      </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; min-height: 32px; flex-shrink: 0; flex-wrap: wrap; row-gap: 12px">
+      <div style="align-items: center; box-sizing: border-box; display: flex; position: relative; flex-shrink: 0">
+        <div style="align-items: center; background-color: #ECECED; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-shadow: #00000017 0px 0px 0px 0.5px; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: #1B1B1B; display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Mine
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Team
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Gallery
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="align-items: start; box-sizing: border-box; display: flex; gap: 12px; position: relative; flex-shrink: 0">
+        <div style="align-items: center; background-color: #FFFFFF; border-radius: 6px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; outline: 1px solid #E6E6E6; width: 32px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" style="flex-shrink: 0">
+            <path d="M1.25 3.125h12.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.75 7.5h7.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5.625 11.875h3.75" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div style="align-items: center; border-color: #E6E6E6; border-radius: 8px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: space-between; padding-inline: 12px">
+          <svg width="16" height="16" viewBox="0 0 25.6 25.6" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+            <circle cx="11.2" cy="11.2" r="6.4" fill="none" stroke="#666666" stroke-width="1.8"></circle>
+            <path d="M16.533 16.533l4.8 4.8" fill="none" stroke="#666666" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+          <div style="box-sizing: border-box; color: #4D4D4D; font-family: system-ui, sans-serif; font-size: 14px; line-height: 18px; width: max-content">
+            Find a agent
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #171717; border-radius: 8px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: center; padding-inline: 12px">
+          <svg width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; flex-shrink: 0">
+            <path d="M12 5v14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M5 12h14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 18px; white-space: nowrap">
+            New agent
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 24px; flex-shrink: 0">
+      <div style="align-items: end; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; position: relative; ">
+        <div style="align-items: start; box-sizing: border-box; display: flex; gap: 16px; width: 100%; flex-wrap: wrap">
+          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex: 1 1 0; min-width: 340px; height: 92px; outline: 1px solid var(--color-grey-300); position: relative">
+            <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.977px; padding-top: 1px; position: absolute; top: 15.984px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+                <line x1="8" x2="8" y1="1.333" y2="14.667" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></line>
+                <path d="M11.333 3.333H6.333a2.333 2.333 0 0 0 0 4.667h3.334a2.333 2.333 0 0 1 0 4.667H4" fill="none" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 41.977px; position: absolute; top: 16px">
+              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 256px">
+                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                  Business Review
+                </div>
+                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px">
+                  Ranks variances by materiality, decomposes.
+                </div>
+              </div>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Monthly
+                  </div>
+                </div>
+                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Email + Slack deck
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); right: 16px; padding-inline: var(--spacing-3); position: absolute; top: 11.977px; width: 49px">
+              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
+                Use
+              </div>
+            </div>
+          </div>
+          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex: 1 1 0; min-width: 340px; height: 92px; outline: 1px solid var(--color-grey-300); position: relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="left: 16px; top: 16px; position: absolute">
+              <path d="M4.667 2.333c3.333-1.333 4.667 1.667 2 2.667C1 6.667 1.333 10 3.333 10.667c3.333 1.333 6-6.667 9.334-4.667s0.333 9-2.667 8c-3.333-1.667 0.333-7.333 4-1.333" fill="none" stroke="var(--color-gradient-end)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
+                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                  Cohort & Lifecycle Review
+                </div>
+                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px">
+                  Retention and value curves for cohorts.
+                </div>
+              </div>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Monthly
+                  </div>
+                </div>
+                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Email report
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); right: 16px; padding-inline: var(--spacing-3); position: absolute; top: 12px; width: 49px">
+              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
+                Use
+              </div>
+            </div>
+          </div>
+          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex: 1 1 0; min-width: 340px; height: 92px; outline: 1px solid var(--color-grey-300); position: relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="left: 16px; top: 16px; position: absolute">
+              <circle cx="8" cy="8" r="6.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M7.367 5.078a0.667 0.667 0 0 1 1.273 0.016l0.491 0.968a0.667 0.667 0 0 0 0.492 0.356l1.089 0.171a0.667 0.667 0 0 1 0.392 1.204l-0.781 0.779a0.667 0.667 0 0 0-0.188 0.577l0.172 1.075a0.667 0.667 0 0 1-1.027 0.756l-0.977-0.5a0.667 0.667 0 0 0-0.608 0l-0.976 0.5a0.667 0.667 0 0 1-1.026-0.755l0.172-1.075a0.667 0.667 0 0 0-0.188-0.578l-0.771-0.768a0.667 0.667 0 0 1 0.381-1.215l1.089-0.171a0.667 0.667 0 0 0 0.491-0.356z" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                  Executive Morning Brief
+                </div>
+                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px">
+                  A cross-domain digest before the day starts.
+                </div>
+              </div>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Daily 7:30 AM
+                  </div>
+                </div>
+                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                    Email + Slack
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); right: 16px; padding-inline: var(--spacing-3); position: absolute; top: 12px; width: 49px">
+              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
+                Use
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #FFFFFF; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 6px; height: 32px; padding-inline: var(--spacing-3)">
+          <div style="box-sizing: border-box; color: #171717; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 16px">
+            See more
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" style="flex-shrink: 0">
+            <path d="M4.083 4.083h5.834v5.834" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M4.083 9.917L9.917 4.083" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div style="overflow: auto; margin-top: 25px; flex: 1 1 auto; min-height: 0">
+      <div id="agents-table" style="isolation: isolate; align-items: start; box-sizing: border-box; display: flex; flex-direction: column; height: 668px; overflow: clip; position: relative; width: 1157px">
         <div style="align-items: start; align-self: stretch; box-sizing: border-box; display: flex; flex-shrink: 0; height: 668px; overflow: clip">
           <div style="align-items: start; box-sizing: border-box; display: flex; flex: 1; flex-direction: column">
             <div style="align-items: start; align-self: stretch; box-sizing: border-box; display: flex; flex-direction: column; grid-column-end: title; grid-column-start: title; padding-block: 10px; padding-inline: 12px">
@@ -1053,7 +1222,9 @@
           </div>
         </div>
       </div>
-      <div style="align-items: center; box-sizing: border-box; display: flex; gap: 6px; height: 32px; left: 1149px; position: absolute; top: 945px">
+    </div>
+    <div style="display: flex; justify-content: flex-end; margin-top: 0; flex-shrink: 0">
+      <div style="align-items: center; box-sizing: border-box; display: flex; gap: 6px; height: 32px; position: relative; ">
         <div style="align-items: center; background-color: #FFFFFF; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px">
           <svg width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
             <path d="m15 18-6-6 6-6" fill="none" stroke="#555555" stroke-width="1.8"></path>
@@ -1070,192 +1241,11 @@
           </svg>
         </div>
       </div>
-      <div style="box-sizing: border-box; color: var(--color-text-primary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-h2); font-weight: 500; left: 168px; line-height: 24px; position: absolute; top: 16px; width: fit-content">
-        Agents
-      </div>
-      <div style="align-items: start; box-sizing: border-box; display: flex; gap: 12px; left: 1028px; position: absolute; top: 64px">
-        <div style="align-items: center; background-color: #FFFFFF; border-radius: 6px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; outline: 1px solid #E6E6E6; width: 32px">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" style="flex-shrink: 0">
-            <path d="M1.25 3.125h12.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M3.75 7.5h7.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M5.625 11.875h3.75" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div style="align-items: center; border-color: #E6E6E6; border-radius: 8px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: space-between; padding-inline: 12px">
-          <svg width="16" height="16" viewBox="0 0 25.6 25.6" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-            <circle cx="11.2" cy="11.2" r="6.4" fill="none" stroke="#666666" stroke-width="1.8"></circle>
-            <path d="M16.533 16.533l4.8 4.8" fill="none" stroke="#666666" stroke-width="1.8" stroke-linecap="round"></path>
-          </svg>
-          <div style="box-sizing: border-box; color: #4D4D4D; font-family: system-ui, sans-serif; font-size: 14px; line-height: 18px; width: max-content">
-            Find a agent
-          </div>
-        </div>
-        <div style="align-items: center; background-color: #171717; border-radius: 8px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: center; padding-inline: 12px">
-          <svg width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; flex-shrink: 0">
-            <path d="M12 5v14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
-            <path d="M5 12h14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
-          </svg>
-          <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 18px">
-            New agent
-          </div>
-        </div>
-      </div>
-      <div style="align-items: end; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 166px; position: absolute; top: 120px">
-        <div style="align-items: start; box-sizing: border-box; display: flex; gap: 16px">
-          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex-shrink: 0; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; width: 375px">
-            <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.977px; padding-top: 1px; position: absolute; top: 15.984px">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
-                <line x1="8" x2="8" y1="1.333" y2="14.667" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></line>
-                <path d="M11.333 3.333H6.333a2.333 2.333 0 0 0 0 4.667h3.334a2.333 2.333 0 0 1 0 4.667H4" fill="none" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </div>
-            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 41.977px; position: absolute; top: 16px">
-              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 256px">
-                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
-                  Business Review
-                </div>
-                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
-                  Ranks variances by materiality, decomposes.
-                </div>
-              </div>
-              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
-                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
-                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Monthly
-                  </div>
-                </div>
-                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
-                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Email + Slack deck
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); left: 313.977px; padding-inline: var(--spacing-3); position: absolute; top: 11.977px; width: 49px">
-              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
-                Use
-              </div>
-            </div>
-          </div>
-          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex-shrink: 0; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; width: 375px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="left: 16px; top: 16px; position: absolute">
-              <path d="M4.667 2.333c3.333-1.333 4.667 1.667 2 2.667C1 6.667 1.333 10 3.333 10.667c3.333 1.333 6-6.667 9.334-4.667s0.333 9-2.667 8c-3.333-1.667 0.333-7.333 4-1.333" fill="none" stroke="var(--color-gradient-end)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
-              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
-                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
-                  Cohort & Lifecycle Review
-                </div>
-                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
-                  Retention and value curves for cohorts.
-                </div>
-              </div>
-              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
-                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
-                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Monthly
-                  </div>
-                </div>
-                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
-                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Email report
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); left: 314.008px; padding-inline: var(--spacing-3); position: absolute; top: 12px; width: 49px">
-              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
-                Use
-              </div>
-            </div>
-          </div>
-          <div style="border-radius: var(--radius-lg); box-sizing: border-box; flex-shrink: 0; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; width: 375px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="left: 16px; top: 16px; position: absolute">
-              <circle cx="8" cy="8" r="6.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
-              <path d="M7.367 5.078a0.667 0.667 0 0 1 1.273 0.016l0.491 0.968a0.667 0.667 0 0 0 0.492 0.356l1.089 0.171a0.667 0.667 0 0 1 0.392 1.204l-0.781 0.779a0.667 0.667 0 0 0-0.188 0.577l0.172 1.075a0.667 0.667 0 0 1-1.027 0.756l-0.977-0.5a0.667 0.667 0 0 0-0.608 0l-0.976 0.5a0.667 0.667 0 0 1-1.026-0.755l0.172-1.075a0.667 0.667 0 0 0-0.188-0.578l-0.771-0.768a0.667 0.667 0 0 1 0.381-1.215l1.089-0.171a0.667 0.667 0 0 0 0.491-0.356z" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
-              <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
-                <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
-                  Executive Morning Brief
-                </div>
-                <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
-                  A cross-domain digest before the day starts.
-                </div>
-              </div>
-              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
-                  <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
-                    <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Daily 7:30 AM
-                  </div>
-                </div>
-                <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                  <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-                <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
-                  <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
-                    <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
-                    Email + Slack
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); left: 314px; padding-inline: var(--spacing-3); position: absolute; top: 12px; width: 49px">
-              <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
-                Use
-              </div>
-            </div>
-          </div>
-        </div>
-        <a style="text-decoration: none; color: inherit"><div style="align-items: center; background-color: #FFFFFF; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 6px; height: 32px; padding-inline: var(--spacing-3)">
-          <div style="box-sizing: border-box; color: #171717; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 16px">
-            See more
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" style="flex-shrink: 0">
-            <path d="M4.083 4.083h5.834v5.834" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M4.083 9.917L9.917 4.083" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div></a>
-      </div>
     </div>
+  </div>
+</main>
 </div>
 <script>
-  (function () {
-    var stage = document.getElementById('stage');
-    function fit() {
-      var s = Math.min(window.innerWidth / 1440, window.innerHeight / 1000);
-      stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
-    }
-    window.addEventListener('resize', fit);
-    fit();
-  })();
-
   (function () {
     var tbl = document.getElementById('agents-table');
     var baked = tbl.querySelector('.row-arrow');
@@ -1284,7 +1274,6 @@
       tbl.appendChild(hit);
     }
   })();
-
 </script>
 </body>
 </html>
