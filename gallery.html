@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery — Explorers V3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+  --color-gradient-end: hsl(267 76% 61%);
+  --color-grey-300: rgb(212 216 227);
+  --color-grey-600: rgb(134 135 162);
+  --color-grey-800: rgb(70 71 89);
+  --color-royal-blue: rgb(6 136 255);
+  --color-sea-blue: rgb(2 106 162);
+  --color-success: rgb(115 162 13);
+  --color-text-primary: rgb(51 52 68);
+  --color-text-secondary: hsl(218 22% 10% / 70%);
+  --color-ui-green-dark: #3BA969;
+  --color-ui-orange-dark: #EC861E;
+  --radius-lg: 12px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --text-base: 16px;
+  --text-h2: 19px;
+  --text-xs: 12px;
+}
+  * { margin: 0; padding: 0; }
+  html, body { background: #FFFFFF; height: 100%; overflow: hidden; }
+  .gcard .card-use { opacity: 0; transition: opacity .1s; }
+  .gcard:hover .card-use { opacity: 1; }
+  a.rail-logo {
+    position: fixed;
+    left: 0; top: 0;
+    width: 48px; height: 56px;
+    z-index: 10;
+    display: block;
+  }
+</style>
+</head>
+<body>
+<a class="rail-logo" href="https://woo-mi.github.io/prototype-agenda/" aria-label="Back to agenda"></a>
+<div style="height: 100vh; overflow: hidden; background-color: #FFFFFF; box-sizing: border-box; font-family: Inter; font-size: 12px; font-synthesis: none; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased">
+<div style="backdrop-filter: blur(14px); background-color: #F5F5F5D1; border-right-color: color(display-p3 0.902 0.902 0.902); border-right-style: solid; border-right-width: 1px; box-sizing: border-box; height: 100vh; left: 0; overflow: clip; position: fixed; top: 0; width: 48px; z-index: 5">
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; gap: 11px; left: 0; position: absolute; top: 8px">
+          <div style="align-items: center; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 40px; justify-content: center; width: 40px">
+            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fontSize="14px" textRendering="optimizelegibility" style="height: 40px; width: 40px; overflow: clip; flex-shrink: 0">
+              <defs style="appearance: none; border-block-end-color: #333444; border-block-end-style: solid; border-block-start-color: #333444; border-block-start-style: solid; border-bottom-color: #333444; border-bottom-style: solid; border-inline-end-color: #333444; border-inline-end-style: solid; border-inline-start-color: #333444; border-inline-start-style: solid; border-left-color: #333444; border-left-style: solid; border-right-color: #333444; border-right-style: solid; border-top-color: #333444; border-top-style: solid; box-sizing: border-box; display: inline; fill: none; font-size: 14px; transform-origin: 0px 0px; width: auto; height: auto;"><linearGradient id="_c1zlgv0" x1="4.46" y1="-2036.28" x2="33.95" y2="-2069.83" gradienttransform="translate(0 -2034) scale(1 -1)" gradientUnits="userSpaceOnUse" style="width: auto; height: auto;"><stop offset=".08" stop-color="#10d1e0" style="width: auto; height: auto;"></stop><stop offset=".44" stop-color="#5b52ff" style="width: auto; height: auto;"></stop><stop offset=".7" stop-color="#4b40dd" style="width: auto; height: auto;"></stop><stop offset="1" stop-color="#7b37c4" style="width: auto; height: auto;"></stop></linearGradient></defs>
+              <g fontSize="14px" style="box-sizing: border-box; isolation: isolate; transform-origin: 0px 0px">
+                <g fontSize="14px" style="box-sizing: border-box">
+                  <g fontSize="14px" style="box-sizing: border-box; mix-blend-mode: multiply; transform-origin: 0px 0px"></g>
+                  <path d="M31.454 25.491c-0.119-0.255-1.205-2.465 0-4.938 0.085-0.179 0.127-0.374 0.136-0.57 0-0.204-0.042-0.391-0.128-0.569-0.119-0.247-1.214-2.457 0-4.93 0.365-0.748-0.051-1.76-1.018-1.87-1.129-0.128-1.723 1.037-1.324 1.861 0.356 0.74 1.078 2.72 0 4.93-0.085 0.162-0.119 0.34-0.127 0.519 0 0.179 0.017 0.366 0.084 0.527 0.314 0.816 1.078 3.46 0.255 3.935-0.832 0.485-2.826-1.683-3.225-2.184-0.11-0.136-0.255-0.255-0.407-0.34s-0.323-0.136-0.51-0.145c-0.806-0.06-2.86-0.425-4.218-2.465-0.119-0.179-0.28-0.323-0.475-0.425-0.187-0.102-0.399-0.153-0.62-0.153s-0.424 0.051-0.619 0.153c-0.187 0.102-0.348 0.247-0.476 0.425-1.349 2.023-3.403 2.397-4.218 2.465-0.178 0.017-0.356 0.06-0.509 0.145s-0.297 0.204-0.407 0.34c-0.492 0.621-2.385 2.652-3.226 2.184-0.857-0.493 0.008-3.29 0.255-3.935 0.059-0.162 0.093-0.349 0.085-0.527 0-0.179-0.051-0.357-0.127-0.519-1.069-2.21-0.348-4.191 0-4.93 0.399-0.825-0.204-1.989-1.324-1.861-0.959 0.111-1.383 1.131-1.019 1.87 1.205 2.482 0.11 4.684 0 4.93-0.085 0.179-0.127 0.374-0.127 0.569s0.042 0.391 0.136 0.57c1.205 2.474 0.11 4.684 0 4.938-0.136 0.281-0.161 0.612-0.085 0.91 0.085 0.298 0.272 0.561 0.534 0.739 0.611 0.408 1.392 0.213 1.783-0.323 0.789-1.097 2.249-2.406 4.184-2.49 0.187 0 0.382-0.06 0.552-0.145 0.17-0.094 0.314-0.221 0.433-0.374 2.47-3.256 5.729-3.426 8.317 0 0.119 0.153 0.263 0.281 0.433 0.374s0.365 0.136 0.552 0.145c1.935 0.085 3.403 1.394 4.184 2.49 0.39 0.536 1.171 0.748 1.782 0.323 0.263-0.17 0.45-0.434 0.535-0.739s0.051-0.629-0.085-0.91c0 0 0.034 0 0.034 0Z" fontSize="12px" fill="#000000" style="box-sizing: border-box"></path>
+                  <g fontSize="14px" style="box-sizing: border-box; transform-origin: 0px 0px">
+                    <path d="M11.441 18.955s0.042 0 0.059-0.017l2.496-1.454c0.051-0.034 0.119-0.043 0.178-0.034 0.068 0 0.127 0.026 0.187 0.051h0.017c0.051 0.034 0.102 0.085 0.127 0.128 0.034 0.051 0.042 0.111 0.042 0.187v2.924s0.017 0.06 0.034 0.085c0.051 0.051 0.127 0.051 0.178 0 0.025-0.026 0.034-0.051 0.034-0.094v-2.924c0-0.051 0.017-0.119 0.043-0.161 0.042-0.06 0.085-0.102 0.127-0.128l0.026-0.017c0.051-0.026 0.119-0.043 0.195-0.042s0.127 0.017 0.187 0.042l2.478 1.445s0.051 0.017 0.085 0.017 0.051-0.026 0.076-0.042h0.017v-0.026s0-0.009 0.009-0.017v-0.051s0-0.043-0.017-0.059c0-0.009-0.017-0.017-0.026-0.026l-2.495-1.453c-0.051-0.034-0.11-0.085-0.136-0.136s-0.042-0.119-0.042-0.196v-0.017c0-0.068 0.017-0.128 0.051-0.195s0.093-0.111 0.135-0.136l3.684-2.142c0.059-0.034 0.119-0.043 0.187-0.034 0.059 0 0.11 0.017 0.186 0.051h0.017c0.051 0.034 0.102 0.085 0.128 0.127 0.034 0.051 0.042 0.111 0.042 0.187v2.95s0.017 0.06 0.034 0.085c0.025 0.026 0.051 0.034 0.085 0.034h0.051s0.025-0.017 0.034-0.026c0.025-0.026 0.025-0.051 0.025-0.059v-2.967c0-0.068 0.017-0.128 0.043-0.195 0.034-0.051 0.085-0.102 0.144-0.136 0.059-0.043 0.136-0.051 0.187-0.051 0.068 0 0.127 0.017 0.195 0.042l3.683 2.142s0.093 0.077 0.128 0.136c0.025 0.043 0.034 0.102 0.033 0.187v0.017c0 0.077-0.008 0.128-0.033 0.179-0.034 0.06-0.085 0.111-0.128 0.136l-2.504 1.462-0.025 0.025-0.025 0.043v0.051s0 0.051 0.025 0.068c0.017 0.026 0.042 0.034 0.068 0.042h0.017s0.051 0 0.085-0.008l2.495-1.462s0.102-0.043 0.161-0.043 0.11 0.017 0.162 0.043l0.025 0.017c0.051 0.034 0.102 0.085 0.136 0.136 0.025 0.051 0.042 0.119 0.042 0.195v2.916s0.017 0.06 0.034 0.085c0.025 0.026 0.051 0.034 0.094 0.034h0.05s0.025-0.017 0.034-0.034c0.025-0.026 0.025-0.051 0.026-0.06v-2.966c0-0.068 0.017-0.119 0.042-0.187 0.025-0.051 0.076-0.094 0.145-0.119 0.051-0.034 0.11-0.051 0.178-0.051s0.127 0.017 0.178 0.034l2.495 1.453s0.025 0.009 0.051 0.009h0.051s0.025-0.017 0.034-0.026c0.025-0.026 0.025-0.051 0.026-0.051h0v-0.068s-0.034-0.06-0.051-0.068l-2.47-1.445c-0.051-0.034-0.11-0.085-0.136-0.136-0.025-0.043-0.034-0.094-0.042-0.153h0.068v-0.068c0-0.068 0.017-0.128 0.042-0.195 0.034-0.051 0.085-0.111 0.136-0.136l2.478-1.454s0.034-0.034 0.042-0.051v-0.093s-0.008-0.026-0.025-0.034c-0.034-0.026-0.051-0.026-0.059-0.026h-0.034s-0.042 0-0.06 0.017l-2.495 1.454c-0.051 0.034-0.11 0.043-0.178 0.034-0.068 0-0.127-0.026-0.187-0.051-0.059-0.034-0.11-0.085-0.136-0.128-0.034-0.051-0.042-0.111-0.042-0.178v-4.344c0-0.051 0.017-0.119 0.042-0.161 0.034-0.06 0.085-0.102 0.119-0.128l0.026-0.017c0.051-0.026 0.119-0.043 0.195-0.043 0.068 0 0.127 0.017 0.186 0.043l2.487 1.454s0.025 0.017 0.051 0.017h0.034s0.042-0.009 0.06-0.034c0.017-0.017 0.025-0.034 0.025-0.043 0.008-0.026 0.008-0.06 0-0.085 0-0.026-0.025-0.051-0.042-0.068l-2.513-1.471c-0.059-0.034-0.102-0.085-0.127-0.127-0.025-0.034-0.034-0.094-0.034-0.162 0-0.077 0-0.153-0.025-0.229-0.034-0.111-0.102-0.213-0.196-0.289-0.093-0.085-0.204-0.136-0.322-0.153-0.161-0.017-0.297 0-0.425 0.085-0.051 0.034-0.119 0.051-0.178 0.051-0.068 0-0.119-0.017-0.178-0.034l-3.7-2.159c-0.059-0.034-0.102-0.085-0.128-0.128-0.025-0.034-0.034-0.094-0.034-0.161 0-0.102-0.008-0.196-0.051-0.298-0.034-0.094-0.102-0.17-0.161-0.229s-0.153-0.111-0.254-0.136c-0.093-0.026-0.187-0.026-0.298-0.009-0.102 0.017-0.195 0.06-0.271 0.119-0.085 0.068-0.153 0.145-0.187 0.238-0.042 0.085-0.068 0.179-0.068 0.289 0 0.077-0.017 0.136-0.042 0.204-0.034 0.051-0.085 0.111-0.136 0.136l-3.683 2.151c-0.051 0.034-0.119 0.043-0.179 0.034-0.059 0-0.11-0.017-0.178-0.051-0.136-0.085-0.297-0.111-0.458-0.085-0.119 0.026-0.229 0.085-0.306 0.153-0.076 0.068-0.144 0.179-0.178 0.289-0.017 0.06-0.025 0.136-0.025 0.212s-0.008 0.128-0.034 0.162c-0.034 0.06-0.085 0.102-0.119 0.127l-2.512 1.463s-0.051 0.043-0.051 0.085v0.076s0.017 0.026 0.025 0.034v0.017h0.085s0.025 0.009 0.051-0.008l2.512-1.463s0.102-0.043 0.161-0.042 0.11 0.017 0.162 0.042l0.025 0.017c0.051 0.034 0.11 0.085 0.136 0.137 0.025 0.051 0.042 0.119 0.042 0.195v4.318c0 0.068-0.017 0.119-0.051 0.187-0.025 0.051-0.068 0.085-0.135 0.119-0.051 0.034-0.11 0.051-0.179 0.051s-0.127-0.017-0.186-0.034l-2.496-1.453s-0.025-0.009-0.051-0.009h-0.05s-0.025 0.017-0.034 0.026c-0.008 0.009-0.034 0.026-0.034 0.059h0v0.068s0.034 0.06 0.051 0.068l2.469 1.445c0.051 0.034 0.102 0.085 0.136 0.136 0.025 0.051 0.042 0.119 0.043 0.196v0.017c0 0.068-0.017 0.128-0.051 0.195s-0.093 0.111-0.136 0.136l-2.478 1.445s-0.051 0.043-0.051 0.077v0.076s0.017 0.026 0.025 0.034c0.025 0.026 0.051 0.026 0.06 0.026h0.076ZM24.953 11.755v4.335c0 0.068-0.017 0.119-0.043 0.187-0.025 0.051-0.076 0.094-0.144 0.119-0.051 0.034-0.102 0.051-0.178 0.051s-0.119-0.017-0.179-0.034l-3.683-2.15c-0.051-0.034-0.11-0.085-0.136-0.136-0.025-0.051-0.042-0.119-0.042-0.196v-0.017c0-0.068 0.017-0.128 0.042-0.195 0.034-0.051 0.085-0.111 0.136-0.136l3.658-2.134c0.051-0.026 0.119-0.043 0.195-0.043 0.068 0 0.127 0.017 0.187 0.043l0.025 0.017c0.059 0.043 0.102 0.085 0.128 0.128 0.025 0.043 0.042 0.102 0.042 0.161h-0.008ZM24.435 10.879c0 0.068-0.017 0.128-0.043 0.196-0.034 0.051-0.085 0.111-0.135 0.136l-3.684 2.151c-0.059 0.034-0.119 0.043-0.178 0.034-0.068 0-0.119-0.017-0.178-0.051l-0.068-0.043h0s-0.059-0.043-0.077-0.068c-0.034-0.051-0.042-0.111-0.042-0.187v-4.344c0-0.051 0.017-0.119 0.042-0.161 0.042-0.06 0.085-0.102 0.128-0.128l0.025-0.017c0.051-0.026 0.119-0.043 0.195-0.042 0.068 0 0.127 0.017 0.187 0.042l3.658 2.134c0.051 0.034 0.11 0.085 0.136 0.136 0.025 0.051 0.042 0.119 0.042 0.195v0.017h-0.008ZM19.75 13.098c0 0.051-0.017 0.094-0.042 0.145-0.025 0.051-0.076 0.094-0.145 0.119-0.051 0.034-0.11 0.051-0.178 0.051s-0.127-0.017-0.178-0.034l-3.684-2.151c-0.051-0.034-0.11-0.085-0.136-0.136-0.025-0.051-0.042-0.119-0.042-0.196v-0.017c0-0.068 0.017-0.128 0.042-0.195 0.034-0.068 0.093-0.111 0.136-0.136l3.658-2.134c0.051-0.026 0.119-0.043 0.196-0.042 0.068 0 0.127 0.017 0.195 0.042 0.051 0.034 0.11 0.085 0.136 0.136s0.042 0.119 0.042 0.196c0 0 0 4.352 0 4.352ZM19.215 13.897v0.06h0.017c0 0.051-0.008 0.102-0.034 0.153-0.034 0.06-0.085 0.111-0.127 0.136l-3.684 2.142c-0.051 0.026-0.119 0.043-0.195 0.042s-0.127-0.017-0.186-0.042l-0.026-0.017c-0.059-0.043-0.102-0.085-0.127-0.128-0.025-0.043-0.042-0.102-0.043-0.161v-4.318c0-0.068 0.017-0.128 0.051-0.196s0.093-0.111 0.136-0.136c0.059-0.043 0.136-0.051 0.187-0.051 0.068 0 0.127 0.017 0.187 0.042l3.675 2.151c0.051 0.026 0.093 0.077 0.127 0.136 0.025 0.043 0.034 0.102 0.034 0.179h0Z" fontSize="12px" fill="#000000" style="box-sizing: border-box"></path>
+                    <path d="M28.458 27.115l-0.06-0.034v0.017s-0.025-0.017-0.042-0.026h-0.017s-0.051 0-0.085 0.009l-2.495 1.453s-0.102 0.043-0.161 0.043-0.11-0.017-0.17-0.051l-0.042-0.026c-0.059-0.043-0.102-0.085-0.128-0.127-0.025-0.043-0.042-0.102-0.042-0.162v-2.941s-0.017-0.06-0.034-0.076c-0.051-0.051-0.127-0.051-0.178 0-0.025 0.026-0.034 0.051-0.034 0.093v2.916c0 0.068-0.017 0.128-0.043 0.195-0.025 0.051-0.076 0.102-0.136 0.128-0.051 0.034-0.11 0.051-0.178 0.051s-0.119-0.017-0.178-0.034l-3.684-2.151c-0.051-0.034-0.11-0.085-0.135-0.136s-0.042-0.119-0.043-0.187v-0.017c0-0.068 0.017-0.128 0.043-0.195 0.034-0.051 0.085-0.102 0.135-0.136l2.47-1.437 0.034-0.034 0.026-0.042v-0.051s0-0.043-0.026-0.068c-0.008-0.017-0.034-0.034-0.085-0.034-0.017 0-0.051 0-0.085 0.017l-2.486 1.445c-0.051 0.034-0.119 0.043-0.179 0.034-0.068 0-0.119-0.026-0.186-0.051-0.059-0.034-0.11-0.085-0.136-0.128-0.034-0.051-0.042-0.111-0.043-0.187v-2.941s-0.017-0.06-0.033-0.085c-0.051-0.051-0.127-0.051-0.179 0-0.025 0.026-0.034 0.051-0.034 0.094v2.932c0 0.068-0.017 0.119-0.042 0.187-0.025 0.051-0.076 0.094-0.144 0.119-0.051 0.034-0.11 0.051-0.179 0.051s-0.127-0.017-0.178-0.034l-2.487-1.453s-0.051-0.026-0.084-0.009c-0.017 0-0.034 0.017-0.051 0.026h-0.034v0.034s0 0.009-0.009 0.017v0.051s0 0.043 0.017 0.059c0 0.009 0.017 0.017 0.026 0.026l2.478 1.445c0.051 0.034 0.102 0.085 0.136 0.136 0.025 0.051 0.042 0.119 0.042 0.195v0.017c0 0.068-0.017 0.128-0.051 0.196-0.034 0.068-0.093 0.111-0.136 0.136l-3.683 2.15c-0.051 0.034-0.119 0.043-0.178 0.034-0.068 0-0.119-0.026-0.187-0.051-0.059-0.034-0.11-0.085-0.136-0.127-0.034-0.051-0.042-0.111-0.042-0.179v-2.941s-0.017-0.06-0.034-0.085c-0.017-0.017-0.042-0.034-0.085-0.034h-0.051s-0.025 0.017-0.034 0.026c-0.017 0.017-0.025 0.034-0.025 0.059v2.975c0 0.068-0.017 0.119-0.051 0.187-0.025 0.051-0.068 0.085-0.136 0.119-0.051 0.034-0.11 0.051-0.178 0.051s-0.119-0.017-0.187-0.034l-2.495-1.453s-0.051-0.026-0.085-0.017c-0.034 0-0.051 0.026-0.077 0.042h-0.017v0.026s0 0.009-0.008 0.017v0.051s0 0.043 0.025 0.059c0 0.009 0.017 0.017 0.026 0.026l2.495 1.462c0.059 0.034 0.102 0.085 0.127 0.127 0.025 0.034 0.034 0.094 0.034 0.162 0 0.077 0 0.153 0.026 0.221 0.025 0.102 0.076 0.17 0.144 0.255 0.076 0.077 0.161 0.128 0.246 0.161s0.178 0.051 0.28 0.034c0.093 0 0.187-0.034 0.272-0.093 0.068-0.034 0.127-0.051 0.187-0.051 0.068 0 0.119 0.017 0.178 0.034l3.7 2.159c0.051 0.034 0.093 0.085 0.128 0.136 0.025 0.043 0.042 0.102 0.042 0.161s0 0.145 0.026 0.213c0.034 0.145 0.136 0.281 0.271 0.374 0.102 0.068 0.221 0.102 0.357 0.102h0.084c0.153-0.017 0.297-0.102 0.399-0.221 0.102-0.111 0.153-0.255 0.153-0.425 0-0.077 0.017-0.136 0.043-0.204 0.034-0.051 0.085-0.111 0.135-0.136l3.684-2.151c0.059-0.034 0.119-0.043 0.187-0.034 0.068 0 0.127 0.026 0.178 0.051 0.136 0.077 0.297 0.111 0.45 0.085 0.102-0.017 0.212-0.068 0.314-0.153 0.076-0.068 0.144-0.179 0.178-0.289 0.017-0.06 0.025-0.136 0.025-0.212 0-0.06 0.017-0.119 0.034-0.162 0.042-0.06 0.085-0.102 0.119-0.127l2.495-1.462 0.026-0.026 0.025-0.042v-0.051s0-0.06-0.034-0.068h-0.025ZM19.826 31.237s-0.017 0.085-0.042 0.128c-0.034 0.06-0.085 0.102-0.127 0.127l-0.026 0.017c-0.051 0.026-0.119 0.043-0.195 0.043-0.068 0-0.127-0.017-0.195-0.043l-3.684-2.142c-0.051-0.026-0.093-0.077-0.127-0.136-0.025-0.043-0.034-0.102-0.034-0.187v-0.017c0-0.068 0-0.077 0.034-0.144 0.025-0.06 0.127-0.119 0.187-0.153l3.683-2.142c0.051-0.026 0.119-0.043 0.195-0.043 0.068 0 0.076-0.009 0.145 0.017 0.051 0.034 0.11 0.085 0.135 0.136s0.042 0.119 0.043 0.196v4.343h0.008ZM24.435 29.138c0 0.06-0.017 0.111-0.043 0.161-0.034 0.051-0.085 0.102-0.135 0.136l-3.616 2.125c-0.059 0.034-0.119 0.043-0.178 0.034-0.068 0-0.11-0.017-0.187-0.051-0.059-0.034-0.11-0.085-0.136-0.127-0.034-0.051-0.042-0.119-0.042-0.187v-4.318c0-0.068 0.017-0.128 0.042-0.196 0.034-0.051 0.085-0.111 0.145-0.136 0.059-0.043 0.068-0.026 0.118-0.025 0.068 0 0.127 0.017 0.187 0.042l3.658 2.134c0.051 0.026 0.11 0.085 0.136 0.136s0.042 0.119 0.042 0.195v0.068h0.009Z" fontSize="12px" fill="#000000" style="box-sizing: border-box"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div style="box-sizing: border-box; flex-shrink: 0; height: 342px; position: relative; width: 48px">
+            <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; left: 0; position: absolute; top: 0; width: 48px">
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+                    <path d="M5 12h14" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 5v14" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+              <div style="align-items: center; background-color: #E6E6E600; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M7.724 3.333H4.046C3.639 3.333 3.31 3.664 3.31 4.074V7.778C3.31 8.187 3.639 8.519 4.046 8.519H7.724C8.13 8.519 8.46 8.187 8.46 7.778V4.074C8.46 3.664 8.13 3.333 7.724 3.333Z" fill="none" stroke="#666666" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M15.816 3.333H12.138C11.732 3.333 11.402 3.664 11.402 4.074V7.778C11.402 8.187 11.732 8.519 12.138 8.519H15.816C16.222 8.519 16.552 8.187 16.552 7.778V4.074C16.552 3.664 16.222 3.333 15.816 3.333Z" fill="none" stroke="#666666" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M15.816 11.481H12.138C11.732 11.481 11.402 11.813 11.402 12.222V15.926C11.402 16.334 11.732 16.667 12.138 16.667H15.816C16.222 16.667 16.552 16.334 16.552 15.926V12.222C16.552 11.813 16.222 11.481 15.816 11.481Z" fill="none" stroke="#666666" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M7.724 11.481H4.046C3.639 11.481 3.31 11.813 3.31 12.222V15.926C3.31 16.334 3.639 16.667 4.046 16.667H7.724C8.13 16.667 8.46 16.334 8.46 15.926V12.222C8.46 11.813 8.13 11.481 7.724 11.481Z" fill="none" stroke="#666666" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div style="align-items: center; background-color: #E6E6E6; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="10" cy="10" r="6.944" fill="none" stroke="#171717" stroke-width="1.3"></circle>
+                  <rect x="8.333" y="7.222" width="1.667" height="3.333" rx="0.75" fill="#171717"></rect>
+                  <rect x="12.222" y="7.222" width="1.667" height="3.333" rx="0.75" fill="#171717"></rect>
+                </svg>
+              </div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M5 5.556V4.444C5 4.444 5 2.778 6.667 2.778 8.889 2.778 12.444 2.778 13.333 2.778 15 2.778 15 4.259 15 4.444 15 5.031 15 4.714 15 5.556M5 5.556H15M5 5.556V8.333M15 5.556C15 6.501 15 7.503 15 8.333M5 8.333V8.889C5 11.111 6.667 11.199 6.667 11.199 6.667 11.199 8.703 11.199 10 11.199M5 8.333H15M15 8.333C15 9.094 15 8.599 15 8.889 15 11.111 13.3 11.199 13.3 11.199 12.129 11.199 11.59 11.199 10 11.199M10 11.199V13.889M3.06 16.111H8.333M11.667 16.111H16.932" fill="none" stroke="#666666" stroke-width="1.2" stroke-linecap="round"></path>
+                  <circle cx="10" cy="15.556" r="1.389" fill="none" stroke="#666666" stroke-width="1.3"></circle>
+                </svg>
+              </div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+                    <path d="m17 2 4 4-4 4" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M3 11v-1a4 4 0 0 1 4-4h14" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="m7 22-4-4 4-4" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M21 13v1a4 4 0 0 1-4 4H3" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 8H7" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M17 12H7" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+                    <circle cx="12" cy="12" r="1" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                    <circle cx="19" cy="12" r="1" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                    <circle cx="5" cy="12" r="1" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <circle cx="12" cy="12" r="3" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div style="background-color: #0F112814; box-sizing: border-box; flex-shrink: 0; height: 1px; width: 28px"></div>
+              <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; padding-block: 4px; width: 36px">
+                <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; width: 20px">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20.211 20.211" style="width: 18px; height: 18px; flex-shrink: 0">
+                    <circle cx="9.267" cy="9.263" r="5.32" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+                    <path d="M17.688 17.685l-3.621-3.622" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-radius: 8px; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; padding-block: 4px; position: absolute; bottom: 56px; width: 40px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 20px; justify-content: center; position: relative; width: 20px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" style="flex-shrink: 0; width: 18px; height: 18px">
+              <path d="M10.268 21a2 2 0 0 0 3.464 0" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" fill="none" stroke="rgb(102 102 102)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div style="align-items: center; background-color: #F04438; border-color: #FFFFFF; border-radius: 8px; border-style: solid; border-width: 2px; box-sizing: border-box; display: flex; height: 15px; justify-content: center; min-width: 15px; padding-inline: 3px; position: absolute; right: -3px; top: -3px">
+              <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 9px; font-weight: 600; line-height: 100%">
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; box-sizing: border-box; display: flex; height: 36px; justify-content: center; left: 4px; position: absolute; bottom: 16px; width: 40px">
+          <div style="align-items: center; background-color: #FBE6F5; border-color: #E7B8DE; border-radius: 50%; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 24px; justify-content: center; width: 24px">
+            <div style="box-sizing: border-box; color: #9E168E; display: flex; font-family: system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px">
+              M
+            </div>
+          </div>
+        </div>
+      </div>
+<div style="align-items: center; border-radius: 6px; box-sizing: border-box; display: flex; height: 24px; justify-content: center; left: 64px; position: fixed; top: 16px; width: 24px; z-index: 5">
+        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+          <rect x="1" y="1.5" width="14" height="13" rx="2.5" fill="none" stroke="#666666"></rect>
+          <path d="M5.6 1.5 L5.6 14.5" fill="#000000" stroke="#666666"></path>
+        </svg>
+      </div>
+<main style="margin-left: 48px; height: 100vh; box-sizing: border-box">
+  <div style="max-width: 1205px; margin: 0 auto; padding: 16px 24px 0 clamp(24px, calc(674.5px - 50vw), 48px); box-sizing: border-box; height: 100%; display: flex; flex-direction: column">
+    <div style="box-sizing: border-box; color: var(--color-text-primary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-h2); font-weight: 500; line-height: 24px; position: relative; width: fit-content">
+        Agents
+      </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; min-height: 32px; flex-shrink: 0; flex-wrap: wrap; row-gap: 12px">
+      <div style="align-items: center; box-sizing: border-box; display: flex; position: relative; flex-shrink: 0">
+        <a href="./" style="text-decoration: none; color: inherit; cursor: pointer"><div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Mine
+            </div>
+          </div>
+        </div></a>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Team
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #ECECED; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-shadow: #00000017 0px 0px 0px 0.5px; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: #1B1B1B; display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Gallery
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="align-items: start; box-sizing: border-box; display: flex; gap: 12px; position: relative; flex-shrink: 0">
+        <div style="align-items: center; background-color: #FFFFFF; border-radius: 6px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; outline: 1px solid #E6E6E6; width: 32px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" style="flex-shrink: 0">
+            <path d="M1.25 3.125h12.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.75 7.5h7.5" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M5.625 11.875h3.75" fill="none" stroke="#171717" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div style="align-items: center; border-color: #E6E6E6; border-radius: 8px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: space-between; padding-inline: 12px">
+          <svg width="16" height="16" viewBox="0 0 25.6 25.6" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+            <circle cx="11.2" cy="11.2" r="6.4" fill="none" stroke="#666666" stroke-width="1.8"></circle>
+            <path d="M16.533 16.533l4.8 4.8" fill="none" stroke="#666666" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+          <div style="box-sizing: border-box; color: #4D4D4D; font-family: system-ui, sans-serif; font-size: 14px; line-height: 18px; width: max-content">
+            Find a agent
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #171717; border-radius: 8px; box-sizing: border-box; display: flex; gap: 6px; height: 32px; justify-content: center; padding-inline: 12px">
+          <svg width="15" height="15" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 14px; flex-shrink: 0">
+            <path d="M12 5v14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M5 12h14" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+          <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 18px; white-space: nowrap">
+            New agent
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="overflow: auto; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; padding-bottom: 40px">
+      <div style="box-sizing: border-box; color: var(--color-text-primary); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-base); line-height: 20px; overflow: hidden; position: relative; -webkit-box-orient: vertical; -webkit-line-clamp: 1; flex-shrink: 0; margin-top: 48px">
+        Recommended based on your usage of WisdomAI
+      </div>
+      <div style="align-content: start; align-items: start; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; position: relative; width: 100%; flex-shrink: 0; margin-top: 20px">
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.977px; padding-top: 1px; position: absolute; top: 15.984px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <line x1="8" x2="8" y1="1.333" y2="14.667" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></line>
+              <path d="M11.333 3.333H6.333a2.333 2.333 0 0 0 0 4.667h3.334a2.333 2.333 0 0 1 0 4.667H4" fill="none" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 41.977px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 256px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Business Review
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Ranks variances by materiality, decomposes.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Monthly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Email + Slack deck
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 16px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <path d="M8 2v12" fill="none" stroke="var(--color-ui-green-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <rect width="12" height="12" x="2" y="2" rx="2" fill="none" stroke="var(--color-ui-green-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></rect>
+              <path d="M2 6h12" fill="none" stroke="var(--color-ui-green-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M2 10h12" fill="none" stroke="var(--color-ui-green-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Metric Movement Explainer
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Answers "why did this change" by walking.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M7.2 1.2L2.4 7.6h3.4l-.9 4.2 4.8-6.4H6.3l.9-4.2z" fill="none" stroke="#71717A" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; flex-shrink: 0; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Triggered by Metric Watch
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; flex-shrink: 0; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack thread
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="left: 16px; top: 16px; position: absolute">
+            <path d="M4.667 2.333c3.333-1.333 4.667 1.667 2 2.667C1 6.667 1.333 10 3.333 10.667c3.333 1.333 6-6.667 9.334-4.667s0.333 9-2.667 8c-3.333-1.667 0.333-7.333 4-1.333" fill="none" stroke="var(--color-gradient-end)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Cohort & Lifecycle Review
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Retention and value curves for cohorts.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Monthly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 2px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Email report
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-use" style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-radius: 999px; border-style: solid; border-width: 1px; box-sizing: border-box; display: inline-flex; gap: 6px; height: var(--spacing-5); right: 12px; padding-inline: var(--spacing-3); position: absolute; top: 12px; width: 49px">
+            <div style="box-sizing: border-box; color: #232323; display: inline-block; font-family: system-ui, sans-serif; font-size: var(--text-xs); font-weight: 500; line-height: 16px">
+              Use
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="8" cy="8" r="6.667" fill="none" stroke="var(--color-sea-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M7.367 5.078a0.667 0.667 0 0 1 1.273 0.016l0.491 0.968a0.667 0.667 0 0 0 0.492 0.356l1.089 0.171a0.667 0.667 0 0 1 0.392 1.204l-0.781 0.779a0.667 0.667 0 0 0-0.188 0.577l0.172 1.075a0.667 0.667 0 0 1-1.027 0.756l-0.977-0.5a0.667 0.667 0 0 0-0.608 0l-0.976 0.5a0.667 0.667 0 0 1-1.026-0.755l0.172-1.075a0.667 0.667 0 0 0-0.188-0.578l-0.771-0.768a0.667 0.667 0 0 1 0.381-1.215l1.089-0.171a0.667 0.667 0 0 0 0.491-0.356z" fill="none" stroke="var(--color-sea-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Executive Morning Brief
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                A cross-domain digest before the day starts.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Daily 7:30 AM
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Email + Slack
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 16px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <line x1="8" x2="8" y1="1.333" y2="14.667" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></line>
+              <path d="M11.333 3.333H6.333a2.333 2.333 0 0 0 0 4.667h3.334a2.333 2.333 0 0 1 0 4.667H4" fill="none" stroke="var(--color-ui-orange-dark)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 223px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Plan Attainment & Gap-to-Goal
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Pacing, run-rate, and gap against plan.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Email digest
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="align-items: center; box-sizing: border-box; display: flex; overflow: clip; position: relative; flex-shrink: 0; margin-top: 54px">
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Popular
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Finance
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #ECECED; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-shadow: #00000017 0px 0px 0px 0.5px; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: #1B1B1B; display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Product
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Growth
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; border-color: #00000000; border-radius: calc(infinity * 1px); border-style: solid; border-width: 0.5px; box-sizing: border-box; display: inline-flex; height: 32px; justify-content: center; max-width: 200px; min-width: 28px; padding-inline: var(--spacing-4); position: relative">
+          <div style="border-radius: calc(infinity * 1px); bottom: 0; box-sizing: border-box; left: 0; position: absolute; right: 0; top: 0"></div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; gap: 4px; position: relative">
+            <div style="box-sizing: border-box; color: var(--color-grey-600); display: -webkit-box; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 1; width: fit-content">
+              Executive
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="align-content: start; align-items: start; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; position: relative; width: 100%; flex-shrink: 0; margin-top: 20px">
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gcard" style="border-radius: var(--radius-lg); box-sizing: border-box; height: 92px; outline: 1px solid var(--color-grey-300); position: relative; flex: 1 1 0; min-width: 340px">
+          <div style="align-items: center; box-sizing: border-box; display: flex; left: 15.992px; padding-top: 1px; position: absolute; top: 16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="flex-shrink: 0">
+              <circle cx="5" cy="5" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="12.333" cy="3.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="7.667" cy="7.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="5" cy="11" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="11.667" cy="9.667" r="0.333" fill="var(--color-royal-blue)" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <path d="M2 2v10.667a1.333 1.333 0 0 0 1.333 1.333h10.667" fill="none" stroke="var(--color-royal-blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; left: 42px; position: absolute; top: 16px">
+            <div style="box-sizing: border-box; flex-shrink: 0; height: 36px; position: relative; width: 253px">
+              <div style="box-sizing: border-box; color: rgb(51 52 68); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 13px; font-weight: 500; left: 0; line-height: 18px; position: absolute; top: 0">
+                Segment Outlier Scan
+              </div>
+              <div style="box-sizing: border-box; color: hsl(218 22% 10% / 40%); font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: 12px; left: 0; line-height: 16px; position: absolute; top: 20px; white-space: nowrap">
+                Scans every segment of the cube for deviation.
+              </div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px">
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <circle cx="6.5" cy="6.5" r="5" fill="none" stroke="var(--color-text-secondary)"></circle>
+                  <path d="M6.5 3.8v2.9l1.9 1.2" fill="none" stroke="var(--color-text-secondary)" stroke-linecap="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Weekly
+                </div>
+              </div>
+              <svg width="11" height="8" viewBox="0 0 11 8" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                <path d="M1 4h8M6.6 1.5L9.4 4 6.6 6.5" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <div style="align-items: center; box-sizing: border-box; display: flex; gap: 4px">
+                <svg width="13" height="13" viewBox="12 0 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
+                  <path d="M19.474 1.3C19.629 1.3 19.782 1.33 19.924 1.389C20.067 1.449 20.196 1.535 20.305 1.644L22.054 3.393C22.164 3.503 22.251 3.632 22.31 3.774C22.369 3.917 22.401 4.07 22.4 4.225M19.474 1.3L15.574 1.3C15.316 1.3 15.068 1.403 14.885 1.586C14.702 1.768 14.6 2.016 14.6 2.275L14.6 10.725C14.6 10.983 14.702 11.231 14.885 11.414C15.068 11.596 15.316 11.7 15.574 11.7L21.425 11.7C21.684 11.7 21.932 11.596 22.115 11.414C22.297 11.231 22.4 10.983 22.4 10.725L22.4 4.225M19.474 1.3L19.474 3.738C19.474 3.866 19.526 3.991 19.618 4.082C19.709 4.173 19.833 4.225 19.962 4.225L22.4 4.225M16.549 9.099L16.549 8.612M18.5 9.099L18.5 6.175M20.45 9.099L20.45 7.637" fill="none" stroke="hsl(218 22% 10% / 70%)" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div style="box-sizing: border-box; color: var(--color-text-secondary); display: inline-block; font-family: &quot;Inter&quot;, system-ui, sans-serif; font-size: var(--text-xs); line-height: 16px">
+                  Slack channel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+<script>
+  (function () {
+    var pill = document.querySelector('.card-use');
+    var cards = document.querySelectorAll('.gcard');
+    for (var i = 0; i < cards.length; i++) {
+      if (!cards[i].querySelector('.card-use')) cards[i].appendChild(pill.cloneNode(true));
+    }
+  })();
+</script>
+</body>
+</html>
