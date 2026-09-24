@@ -369,9 +369,9 @@
         </div>
       </div>
     </div>
-    <div style="overflow: auto; margin-top: 25px; flex: 1 1 auto; min-height: 0">
-      <div id="agents-table" style="isolation: isolate; align-items: start; box-sizing: border-box; display: flex; flex-direction: column; height: 668px; overflow: clip; position: relative; width: 1157px">
-        <div style="align-items: start; align-self: stretch; box-sizing: border-box; display: flex; flex-shrink: 0; height: 668px; overflow: clip">
+    <div style="overflow-x: auto; overflow-y: hidden; margin-top: 25px; flex: 1 1 auto; min-height: 0">
+      <div id="agents-table" style="isolation: isolate; align-items: start; box-sizing: border-box; display: flex; flex-direction: column; height: 620px; overflow: clip; position: relative; width: 1157px">
+        <div style="align-items: start; align-self: stretch; box-sizing: border-box; display: flex; flex-shrink: 0; height: 620px; overflow: clip">
           <div style="align-items: start; box-sizing: border-box; display: flex; flex: 1; flex-direction: column">
             <div style="align-items: start; align-self: stretch; box-sizing: border-box; display: flex; flex-direction: column; grid-column-end: title; grid-column-start: title; padding-block: 10px; padding-inline: 12px">
               <div style="box-sizing: border-box; flex-shrink: 0; height: 16px; position: relative; width: 48px">
@@ -1249,7 +1249,7 @@
   (function () {
     var tbl = document.getElementById('agents-table');
     var baked = tbl.querySelector('.row-arrow');
-    var ROWS = 13, HEADER = 36, ROW_H = 48;
+    var ROWS = 12, HEADER = 36, ROW_H = 48;
     // arrow x within the table, measured from the baked arrow so it lands identically
     var tr = tbl.getBoundingClientRect(), ar = baked.getBoundingClientRect();
     var scale = tr.width / 1157;
