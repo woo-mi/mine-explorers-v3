@@ -420,7 +420,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 100px; border-style: solid; border-width: 0.5px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 24px; justify-content: center; width: 24px">
+                <div class="row-doc" style="opacity: 0; transition: opacity .1s; align-items: center; background-color: #FFFFFF; border-color: #D4D4D4; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-source: none; border-image-width: 1; border-radius: 100px; border-style: solid; border-width: 0.5px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 24px; justify-content: center; width: 24px">
                   <svg width="13" height="13" viewBox="14 2 13 13" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0">
                     <path d="M21.474 3.3C21.629 3.3 21.782 3.331 21.924 3.389C22.067 3.449 22.197 3.536 22.305 3.645L24.054 5.393C24.164 5.503 24.251 5.632 24.311 5.775C24.369 5.918 24.401 6.071 24.4 6.225M21.474 3.3L17.574 3.3C17.317 3.3 17.068 3.403 16.885 3.586C16.702 3.769 16.6 4.017 16.6 4.275L16.6 12.725C16.6 12.983 16.702 13.231 16.885 13.414C17.068 13.597 17.317 13.7 17.574 13.7L23.425 13.7C23.683 13.7 23.932 13.597 24.115 13.414C24.298 13.231 24.4 12.983 24.4 12.725L24.4 6.225M21.474 3.3L21.474 5.738C21.474 5.866 21.525 5.991 21.618 6.082C21.709 6.174 21.833 6.225 21.963 6.225L24.4 6.225M18.549 11.099L18.549 10.612M20.5 11.099L20.5 8.175M22.45 11.099L22.45 9.638" fill="none" stroke="#171717" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
@@ -1252,6 +1252,8 @@
     var ROWS = 12, HEADER = 36, ROW_H = 48;
     // arrow x within the table, measured from the baked arrow so it lands identically
     var tr = tbl.getBoundingClientRect(), ar = baked.getBoundingClientRect();
+    var bakedDoc = tbl.querySelector('.row-doc');
+    var nameCol = tbl.firstElementChild.firstElementChild;
     var scale = tr.width / 1157;
     var ax = (ar.left - tr.left) / scale, ay0 = ((ar.top - tr.top) / scale) - (HEADER + 2 * ROW_H);
     for (var i = 0; i < ROWS; i++) {
@@ -1265,12 +1267,17 @@
         arrow.style.cssText += ';position:absolute;left:' + ax + 'px;top:' + (ay0 + y) + 'px;pointer-events:none;z-index:6';
         tbl.appendChild(arrow);
       }
+      var doc = (i === 2) ? bakedDoc : bakedDoc.cloneNode(true);
+      if (i !== 2) {
+        doc.style.marginLeft = '4px'; // cell gap is 8px, row 3's wrapper gap is 12px
+        nameCol.children[i + 1].appendChild(doc);
+      }
       var hit = document.createElement('div');
       hit.style.cssText = 'position:absolute;left:0;width:1157px;top:' + y + 'px;height:' + ROW_H + 'px;z-index:5';
-      (function (b, a) {
-        hit.addEventListener('mouseenter', function () { b.style.opacity = '1'; a.style.opacity = '1'; });
-        hit.addEventListener('mouseleave', function () { b.style.opacity = '0'; a.style.opacity = '0'; });
-      })(band, arrow);
+      (function (b, a, c) {
+        hit.addEventListener('mouseenter', function () { b.style.opacity = '1'; a.style.opacity = '1'; c.style.opacity = '1'; });
+        hit.addEventListener('mouseleave', function () { b.style.opacity = '0'; a.style.opacity = '0'; c.style.opacity = '0'; });
+      })(band, arrow, doc);
       tbl.appendChild(hit);
     }
   })();
